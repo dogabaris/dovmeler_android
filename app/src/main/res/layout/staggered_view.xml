@@ -3,7 +3,8 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:src="@drawable/background">
 
 
     <GridView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -14,5 +15,6 @@
         android:scrollbarStyle="insideOverlay"
         android:scrollbars="none"
         android:listSelector="@null"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:background="@drawable/background"/>
 </RelativeLayout>

@@ -28,7 +28,7 @@ public class StaggeredAdapter extends BaseAdapter {
 
         // Triple up the list.
         ArrayList<String> copy = new ArrayList<String>(urls);
-        urls.addAll(copy);
+        //urls.addAll(copy);
         //urls.addAll(copy);
     }
 
