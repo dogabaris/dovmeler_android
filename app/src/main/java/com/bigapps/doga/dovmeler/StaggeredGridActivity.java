@@ -23,9 +23,11 @@ public class StaggeredGridActivity extends Activity {
         //gv.setAdapter(new StaggeredAdapter(this));
         //gv.setOnScrollListener(new ScrollListener(this));
 
+        int i=0;
         for(String kategoriurl:KategoriData.URLS){
-            KategoriViewModel row = new KategoriViewModel("Kategori", kategoriurl);
+            KategoriViewModel row = new KategoriViewModel(KategoriData.Name[i], kategoriurl);
             kategoriler.add(row);
+            i++;
         }
 
         Adapter adapter = new Adapter(this.getApplicationContext(), kategoriler);

@@ -2,6 +2,7 @@ package com.bigapps.doga.dovmeler;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -25,6 +26,7 @@ public class Row {
 
     public void bind(KategoriViewModel exampleViewModel) {
         this.textView.setText(exampleViewModel.getText());
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         Picasso.with(this.context)
                 .load(exampleViewModel.getImageUrl())
                 .placeholder(R.drawable.placeholder)
