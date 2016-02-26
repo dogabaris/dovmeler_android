@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.bigapps.doga.dovmeler.SquaredImageView
+        android:id="@+id/kategori_iv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Kategori"
+        android:id="@+id/kategori_tv"
+        android:layout_alignBottom="@+id/kategori_iv"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:background="@color/background_material_dark"
+        android:textColor="#ffffceb7" />
+
+</LinearLayout>

@@ -3,7 +3,7 @@ package com.bigapps.doga.dovmeler;
 /**
  * Created by shadyfade on 24.02.2016.
  */
-public class Data {
+public class KategoriData {
     static final String BASE = "http://muzkabugu.com/dovmeler/dovme/";
     static final String EXT = ".jpg";
     static final String[] URLS = {
@@ -30,7 +30,7 @@ public class Data {
 
     };
 
-    private Data() {
+    private KategoriData() {
         // No instances.
     }
 }

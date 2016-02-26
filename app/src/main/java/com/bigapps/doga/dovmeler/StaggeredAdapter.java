@@ -23,12 +23,11 @@ public class StaggeredAdapter extends BaseAdapter {
         this.context = context;
 
         // Ensure we get a different ordering of images on each run.
-        Collections.addAll(urls, Data.URLS);
+        Collections.addAll(urls, KategoriData.URLS);
         //Collections.shuffle(urls);
 
         // Triple up the list.
         ArrayList<String> copy = new ArrayList<String>(urls);
-        //urls.addAll(copy);
         //urls.addAll(copy);
     }
 
