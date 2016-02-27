@@ -8,8 +8,6 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -17,18 +15,16 @@ import java.util.List;
  */
 public class StaggeredAdapter extends BaseAdapter {
     private final Context context;
-    private final List<String> urls = new ArrayList<String>();
+    private List<String> urls;
 
-    public StaggeredAdapter(Context context) {
+    public StaggeredAdapter(Context context,List<String> kategori_icerik) {
         this.context = context;
+        this.urls = kategori_icerik;
 
         // Ensure we get a different ordering of images on each run.
-        Collections.addAll(urls, KategoriData.URLS);
+        //Collections.addAll(urls, KategoriData.URLS);
         //Collections.shuffle(urls);
 
-        // Triple up the list.
-        ArrayList<String> copy = new ArrayList<String>(urls);
-        //urls.addAll(copy);
     }
 
     @Override public View getView(int position, View convertView, ViewGroup parent) {

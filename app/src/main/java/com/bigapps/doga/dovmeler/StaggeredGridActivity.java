@@ -5,7 +5,10 @@ package com.bigapps.doga.dovmeler;
  */
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import java.util.ArrayList;
@@ -33,5 +36,14 @@ public class StaggeredGridActivity extends Activity {
         Adapter adapter = new Adapter(this.getApplicationContext(), kategoriler);
         gv.setAdapter(adapter);
         gv.setOnScrollListener(new ScrollListener(this));
+        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i=new Intent(StaggeredGridActivity.this,KategoriDetayActivity.class);
+                i.putExtra("id", "" + position);
+                startActivity(i);
+            }
+        });
+
     }
 }

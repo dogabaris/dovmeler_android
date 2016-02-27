@@ -16,7 +16,8 @@ public class MyApplication extends Application{
 
         // Create global configuration and initialize ImageLoader with this configuration
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getApplicationContext()).build();
-        ImageLoader.getInstance().init(config);
+        ImageLoader.getInstance()
+                .init(config);
     }
 
     public static Context getContext() {

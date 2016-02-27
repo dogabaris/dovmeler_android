@@ -26,9 +26,8 @@ public class KategoriData {
             BASE + "wiking-dovme-modelleri-018_595" + EXT, BASE + "yakuza-dovme-modelleri-037_595" + EXT, BASE + "yilan-dovme-modelleri-011_595" + EXT,
             BASE + "yildiz-dovme-modelleri-025_595" + EXT, BASE + "yunus-dovme-modelleri-008_595" + EXT, BASE + "yusufcuk-dovme-modelleri-025_595" + EXT,
             BASE + "zar-dovme-modelleri-049_595" + EXT
-
-
     };
+
     static final String[] Name = {
             "ari dovme modelleri 001" , "ask dovme modelleri 025" , "aslan dovme modelleri 031" ,
             "ates dovme modelleri 063" , "ay dovme modelleri 008" , "balik dovme modelleri 001" ,
@@ -50,7 +49,26 @@ public class KategoriData {
             "yildiz dovme modelleri 025" , "yunus dovme modelleri 008" , "yusufcuk dovme modelleri 025" ,
             "zar dovme modelleri 049",
     };
-
+        static final String[] KategoriDetay = {
+                "ari-dovme-modelleri-" ,  "ask-dovme-modelleri-" ,  "aslan-dovme-modelleri-" ,
+                "ates-dovme-modelleri-"  ,  "ay-dovme-modelleri-" ,  "balik-dovme-modelleri-" ,
+                "bel-dovme-modelleri-"  ,  "burc-dovme-modelleri-" ,  "celtic-dovme-modelleri-",
+                "cicek-dovme-modelleri-"  ,  "dovmeakrep-dovme-modelleri-" ,  "dovmedort-yaprakli-yonca-dovme-modelleri-",
+                "dragon-dovme-modelleri-"  ,  "feminen-dovme-modelleri-" ,  "goz-dovme-modelleri-",
+                "gul-dovme-modelleri-"  ,  "gunes-dovme-modelleri-" ,  "hac-dovme-modelleri-001_595",
+                "isa-dovme-modelleri-"  ,  "japon-dovme-modelleri-" ,  "japon-seytan-dovme-modelleri-",
+                "joker-dovme-modelleri-"  ,  "kalp-dovme-modelleri-" ,  "kanat-dovme-modelleri-" ,
+                "kanji-dovme-modelleri-"  ,  "kaplan-dovme-modelleri-" ,  "kartal-dovme-modelleri-",
+                "kedikedi-dovme-modelleri-"  ,  "kelebek-dovme-modelleri-" ,  "kizilderili-dovme-modelleri-",
+                "koi-fish-dovme-modelleri-"  ,  "kol-banti-dovme-modelleri-" ,  "kurbaga-dovme-modelleri-" ,
+                "kurt-dovme-modelleri-"  ,  "kuru-kafa-dovme-modelleri-" ,  "lotus-nilufer-dovme-modelleri-" ,
+                "mantar-dovme-modelleri-"  ,  "melek-dovme-modelleri-" ,  "misir-dovme-modelleri-" ,
+                "muzik-dovme-modelleri-"  ,  "orumcek-dovme-modelleri-" ,  "pence-pati-dovme-modelleri-",
+                "peri-dovme-modelleri-"  ,  "savasci-dovme-modelleri-" ,  "seytan-dovme-modelleri-",
+                "silah-dovme-modelleri-"  ,  "supermen-dovme-modelleri-" ,  "tribal-dovme-modelleri-",
+                "wiking-dovme-modelleri-"  ,  "yakuza-dovme-modelleri-" ,  "yilan-dovme-modelleri-", "yildiz-dovme-modelleri-" , "yunus-dovme-modelleri-" , "yusufcuk-dovme-modelleri-" ,
+                "zar-dovme-modelleri-"
+        };
 
     private KategoriData() {
         // No instances.
