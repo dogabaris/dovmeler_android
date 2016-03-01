@@ -3,7 +3,7 @@ package com.bigapps.doga.dovmeler;
 /**
  * Created by shadyfade on 24.02.2016.
  */
-public class KategoriData {
+public class Data {
     static final String BASE = "http://muzkabugu.com/dovmeler/dovme/";
     static final String EXT = ".jpg";
     static final String[] URLS = {
@@ -66,11 +66,12 @@ public class KategoriData {
                 "muzik-dovme-modelleri-"  ,  "orumcek-dovme-modelleri-" ,  "pence-pati-dovme-modelleri-",
                 "peri-dovme-modelleri-"  ,  "savasci-dovme-modelleri-" ,  "seytan-dovme-modelleri-",
                 "silah-dovme-modelleri-"  ,  "supermen-dovme-modelleri-" ,  "tribal-dovme-modelleri-",
-                "wiking-dovme-modelleri-"  ,  "yakuza-dovme-modelleri-" ,  "yilan-dovme-modelleri-", "yildiz-dovme-modelleri-" , "yunus-dovme-modelleri-" , "yusufcuk-dovme-modelleri-" ,
+                "wiking-dovme-modelleri-"  ,  "yakuza-dovme-modelleri-" ,  "yilan-dovme-modelleri-", "yildiz-dovme-modelleri-" , "yunus-dovme-modelleri-" ,
+                "yusufcuk-dovme-modelleri-" ,
                 "zar-dovme-modelleri-"
         };
 
-    private KategoriData() {
+    private Data() {
         // No instances.
     }
 }

@@ -1,7 +1,10 @@
 package com.bigapps.doga.dovmeler;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import java.util.ArrayList;
@@ -20,21 +23,32 @@ public class KategoriDetayActivity extends Activity {
         setContentView(R.layout.kategoridetay_layout);
 
         id = getIntent().getExtras().getString("id");
-        Kategori_Ismi = KategoriData.KategoriDetay[Integer.parseInt(id)];
+        Kategori_Ismi = Data.KategoriDetay[Integer.parseInt(id)];
 
         for (int i=1;i<=200;i++){
             if(i<10){
-                kategori_icerik.add(KategoriData.BASE + Kategori_Ismi + "00" + i + "_595" + KategoriData.EXT);
+                kategori_icerik.add(Data.BASE + Kategori_Ismi + "00" + i + "_595" + Data.EXT);
             }else if(i<100){
-                kategori_icerik.add(KategoriData.BASE + Kategori_Ismi + "0" + i + "_595" + KategoriData.EXT);
+                kategori_icerik.add(Data.BASE + Kategori_Ismi + "0" + i + "_595" + Data.EXT);
             }else if(i>100){
-                kategori_icerik.add(KategoriData.BASE + Kategori_Ismi + i + "_595" + KategoriData.EXT);
+                kategori_icerik.add(Data.BASE + Kategori_Ismi + i + "_595" + Data.EXT);
             }
         }
 
         GridView gv = (GridView) findViewById(R.id.kategori_icerik_gv);
         gv.setAdapter(new StaggeredAdapter(this,kategori_icerik));
         gv.setOnScrollListener(new ScrollListener(this));
+        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(KategoriDetayActivity.this, DovmeDetay.class);
+                String link = kategori_icerik.get(position);
+
+                i.putExtra("link", "" + link);
+                i.putExtra("position", "" + position);
+                startActivity(i);
+            }
+        });
 
     }
 }

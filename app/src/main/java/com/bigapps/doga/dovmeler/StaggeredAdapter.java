@@ -40,7 +40,7 @@ public class StaggeredAdapter extends BaseAdapter {
         // Trigger the download of the URL asynchronously into the image view.
         Picasso.with(context) //
                 .load(url) //
-                .placeholder(R.drawable.placeholder) //
+                .placeholder(R.drawable.progress_animation) //
                 .error(R.drawable.error) //
                 .fit() //
                 .tag(context) //

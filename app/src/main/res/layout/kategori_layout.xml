@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <com.bigapps.doga.dovmeler.SquaredImageView
-        android:id="@+id/kategori_iv"
+        android:id="@+id/dovme_iv"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -17,11 +17,11 @@
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Kategori"
         android:id="@+id/kategori_tv"
-        android:layout_alignBottom="@+id/kategori_iv"
+        android:layout_alignBottom="@+id/dovme_iv"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:background="@color/background_material_dark"

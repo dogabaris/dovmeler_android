@@ -20,7 +20,7 @@ public class Row {
 
     protected Row(Context context, View convertView) {
         this.context = context;
-        this.imageView = (SquaredImageView) convertView.findViewById(R.id.kategori_iv);
+        this.imageView = (SquaredImageView) convertView.findViewById(R.id.dovme_iv);
         this.textView = (TextView) convertView.findViewById(R.id.kategori_tv);
     }
 
