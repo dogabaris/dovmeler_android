@@ -14,22 +14,41 @@
         android:layout_alignParentTop="true"
         />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
         android:id="@+id/indir_btn"
+        android:text="@string/indir_txt"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_width="128dp"
+        android:layout_height="52dp"
+        android:background="@drawable/button"
+        android:shadowColor="#12FFF7"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/dovme_iv"
-        android:layout_alignBottom="@+id/paylas_btn" />
+        android:layout_marginBottom="34dp"
+        android:textAllCaps="false"/>
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+
+    <Button
         android:id="@+id/paylas_btn"
+        android:text="Paylaş"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_width="128dp"
+        android:layout_height="52dp"
+        android:background="@drawable/button"
+        android:shadowColor="#12FFF7"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:textAllCaps="false"
+        android:layout_alignTop="@+id/indir_btn"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/dovme_iv"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
