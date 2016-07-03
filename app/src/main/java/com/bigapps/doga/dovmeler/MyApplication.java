@@ -3,9 +3,6 @@ package com.bigapps.doga.dovmeler;
 import android.app.Application;
 import android.content.Context;
 
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-
 
 public class MyApplication extends Application{
     private static Context mContext;
@@ -15,9 +12,7 @@ public class MyApplication extends Application{
         super.onCreate();
 
         // Create global configuration and initialize ImageLoader with this configuration
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getApplicationContext()).build();
-        ImageLoader.getInstance()
-                .init(config);
+
     }
 
     public static Context getContext() {
