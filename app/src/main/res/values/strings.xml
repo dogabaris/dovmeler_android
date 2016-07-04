@@ -4,4 +4,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="indir_txt">İndir</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6164922138244802/8584540570</string>
+    <string name="gecis_ad_unit_id">ca-app-pub-6164922138244802/2566529772</string>
 </resources>

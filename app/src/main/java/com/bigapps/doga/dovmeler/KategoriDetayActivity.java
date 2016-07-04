@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by shadyfade on 26.02.2016.
  */
-public class KategoriDetayActivity extends Activity {
+public class KategoriDetayActivity extends Activity { //Kategorilerin sayfasi
     List<String> kategori_icerik = new ArrayList<String>();
     String Kategori_Ismi;
     String id;

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background">
     <com.bigapps.doga.dovmeler.SquaredImageView
@@ -14,6 +16,18 @@
         android:layout_alignParentTop="true"
         />
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id"
+        android:gravity="bottom"
+        android:layout_below="@+id/dovme_iv"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
     <Button
         android:id="@+id/indir_btn"
         android:text="@string/indir_txt"
@@ -26,11 +40,10 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:layout_alignParentBottom="true"
+        android:textAllCaps="false"
+        android:layout_below="@+id/adView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="34dp"
-        android:textAllCaps="false"/>
+        android:layout_alignParentStart="true" />
 
 
 
@@ -47,7 +60,7 @@
         android:shadowDy="0"
         android:shadowRadius="5"
         android:textAllCaps="false"
-        android:layout_alignTop="@+id/indir_btn"
+        android:layout_below="@+id/adView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 

@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -15,6 +17,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -26,15 +33,57 @@ import java.util.Random;
 /**
  * Created by shadyfade on 01.03.2016.
  */
-public class DovmeDetay extends Activity{
+public class DovmeDetay extends Activity{ // Seçilen dövmenin detayları
     private static String link;
     private String DovmeYolu;
     private boolean kaydetmeflag=true;
+    private InterstitialAd mInterstitialAd;
+    private Button indir_btn,paylas_btn;
+    private boolean flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dovmedetay_layout);
+
+        // MobileAds.initialize(getApplicationContext(), "ca-app-pub-6164922138244802/8584540570");
+
+        AdView adView = (AdView) this.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-6164922138244802/2566529772");
+
+        // Create the InterstitialAd and set the adUnitId.
+        mInterstitialAd = new InterstitialAd(this);
+        // Defined in res/values/strings.xml
+        mInterstitialAd.setAdUnitId(getString(R.string.gecis_ad_unit_id));
+
+        indir_btn = (Button) findViewById(R.id.indir_btn);
+        paylas_btn = (Button) findViewById(R.id.paylas_btn);
+
+        if(isNetworkAvailable())
+            loadGecisReklam();
+
+        mInterstitialAd.setAdListener(new AdListener() {
+                    @Override
+                    public void onAdClosed() {
+                        super.onAdClosed();
+                        flag=true;
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(int i) {
+                        super.onAdFailedToLoad(i);
+                        flag=true;
+                    }
+
+                    @Override
+                    public void onAdLoaded() {
+                        super.onAdLoaded();
+                        showGecisReklam();
+                    }
+        });
 
         String id = getIntent().getExtras().getString("id");
         link = getIntent().getExtras().getString("link");
@@ -49,22 +98,59 @@ public class DovmeDetay extends Activity{
                 .tag(getApplicationContext()) //
                 .into(view);
 
-        Button indir_btn = (Button) findViewById(R.id.indir_btn);
-        Button paylas_btn = (Button) findViewById(R.id.paylas_btn);
 
         paylas_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                shareImage();
+                if(flag){
+                    shareImage();
+                }
+
             }
         });
 
         indir_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageDownload(getApplicationContext(), link);
+                if(flag){
+                    imageDownload(getApplicationContext(), link);
+                }
+
             }
         });
+    }
+
+    public void loadGecisReklam() {
+        // reklam yüklenene kadar reklamGoster butonunu disable ediyoruz
+        indir_btn.setEnabled(false);
+        paylas_btn.setEnabled(false);
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .addTestDevice("0F2A8B170C4A2288C0C1163012BD9176")
+                .build();
+
+        //Reklam Yükleniyor
+        mInterstitialAd.loadAd(adRequest);
+    }
+
+    public void showGecisReklam() {
+        // Tekrar reklam yüklenene kadar disable edilecek
+        indir_btn.setEnabled(true);
+        paylas_btn.setEnabled(true);
+
+        if (mInterstitialAd.isLoaded()) {//Eğer reklam yüklenmişse kontrol ediliyor
+            mInterstitialAd.show(); //Reklam yüklenmişsse gösterilecek
+        } else
+        {
+            Log.w("dovmeler", "Reklam Yüklenemedi!");
+        }
+    }
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
     private void shareImage() {

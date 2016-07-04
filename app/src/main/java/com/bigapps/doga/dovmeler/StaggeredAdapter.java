@@ -25,6 +25,7 @@ public class StaggeredAdapter extends BaseAdapter {
         //Collections.addAll(urls, KategoriData.URLS);
         //Collections.shuffle(urls);
 
+
     }
 
     @Override public View getView(int position, View convertView, ViewGroup parent) {
@@ -39,14 +40,34 @@ public class StaggeredAdapter extends BaseAdapter {
 
         // Trigger the download of the URL asynchronously into the image view.
 
+        /*OkHttpClient okHttpClient = new OkHttpClient();
+        okHttpClient.setConnectTimeout(10, TimeUnit.SECONDS);
+        OkHttpDownloader downloader = new OkHttpDownloader(okHttpClient);
+        Picasso picasso = new Picasso.Builder(context).downloader(downloader).build();
 
-        Picasso.with(context) //
-                .load(url) //
+        picasso.load(url) //
                 .placeholder(R.drawable.progress_animation) //
                 .error(R.drawable.error) //
                 .fit() //
                 .tag(context) //
                 .into(view);
+           */
+        Picasso.with(context)//
+                .load(url)
+                .placeholder(R.drawable.progress_animation) //
+                .error(R.drawable.error) //
+                .fit() //
+                .tag(context) //
+                .into(view);
+
+
+        /*Picasso.with(context) //
+                .load(url) //
+                .placeholder(R.drawable.progress_animation) //
+                .error(R.drawable.error) //
+                .fit() //
+                .tag(context) //
+                .into(view);*/
 
         return view;
     }

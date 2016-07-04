@@ -14,7 +14,7 @@ import android.widget.GridView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StaggeredGridActivity extends Activity {
+public class KategorilerActivity extends Activity { //Kategorilerin içerdiği dövmeler
     List<KategoriViewModel> kategoriler = new ArrayList<KategoriViewModel>();
 
     @Override
@@ -39,7 +39,7 @@ public class StaggeredGridActivity extends Activity {
         gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i=new Intent(StaggeredGridActivity.this,KategoriDetayActivity.class);
+                Intent i=new Intent(KategorilerActivity.this,KategoriDetayActivity.class);
                 i.putExtra("id", "" + position);
                 startActivity(i);
             }
