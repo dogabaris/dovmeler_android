@@ -28,7 +28,7 @@ public class KategorilerActivity extends Activity { //Kategorilerin içerdiği d
 
         int i=0;
         for(String kategoriurl: Data.URLS){
-            KategoriViewModel row = new KategoriViewModel(Data.Name[i], kategoriurl);
+            KategoriViewModel row = new KategoriViewModel(Data.Name[i].replaceAll("[0-9]",""), kategoriurl);
             kategoriler.add(row);
             i++;
         }
